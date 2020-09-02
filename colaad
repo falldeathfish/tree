@@ -1,0 +1,50 @@
+a= 11
+\plaus
+
+int=
+
+execute at colaad
+
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s 
+anchored eyes run summon armor_stand ^ ^ ^1.4 {Tags:["mgl_shot","killmodel"],Invisible:1b,Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,Marker:1b,DisabledSlots:7967}
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s 
+anchored eyes run summon armor_stand ^ ^ ^ {Tags:["model"],Invisible:1b,Invulnerable:1b,PersistenceRequired:1b,NoBasePlate:1b,ArmorItems:[{},{},{},{id:"light_blue_glazed_terracotta",Count:1b}],HandItems:[{},{}],CustomName:"{\"text\":\"greande\"}"}
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+execute as @e[name=greande,limit=1,sort=nearest] store result score @s x run data get entity @s Pos[0] -20000
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+execute as @e[name=greande,limit=1,sort=nearest] store result score @s y run data get entity @s Pos[1] -20000
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+execute as @e[name=greande,limit=1,sort=nearest] store result score @s z run data get entity @s Pos[2] -20000
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+execute as @e[type=armor_stand,tag=mgl_shot,limit=1,sort=nearest] store result score @s x run data get entity @s Pos[0] -20000
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+execute as @e[type=armor_stand,tag=mgl_shot,limit=1,sort=nearest] store result score @s y run data get entity @s Pos[1] -20000
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+execute as @e[type=armor_stand,tag=mgl_shot,limit=1,sort=nearest] store result score @s z run data get entity @s Pos[2] -20000
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+execute as @e[name=greande,limit=1,sort=nearest] run scoreboard players operation @s x -= @e[type=armor_stand,tag=mgl_shot,limit=1,sort=nearest] x
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+execute as @e[name=greande,limit=1,sort=nearest] run scoreboard players operation @s y -= @e[type=armor_stand,tag=mgl_shot,limit=1,sort=nearest] y
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+execute as @e[name=greande,limit=1,sort=nearest] run scoreboard players operation @s z -= @e[type=armor_stand,tag=mgl_shot,limit=1,sort=nearest] z
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+execute as @e[type=minecraft:armor_stand,name=greande,limit=1,sort=nearest] store result entity @s Motion[0] double 0.00005 run scoreboard players get @s x
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+execute as @e[type=minecraft:armor_stand,name=greande,limit=1,sort=nearest] store result entity @s Motion[1] double 0.00005 run scoreboard players get @s y
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+
+kill @e[type=armor_stand,tag=killmodel,limit=1,sort=nearest]
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+teleport @s ~ ~ ~ ~ ~-12
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+playsound minecraft:gungun6 master @a ~ ~ ~ 10 1
+execute as @a[scores={shot=1..},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{Unbreakable:1,CustomModelData:21}}}] at @s run 
+scoreboard players set @s shot 0
+
+execute as @e[type=armor_stand,name=greande] at @s if entity @e[type=!arrow,type=!player,type=!armor_stand,distance=..2] run effect 
+ree"}
+execute as @e[type=armor_stand,name=greande] at @s if entity @e[type=!arrow,type=!player,type=!armor_stand,distance=..2] run kill @s
+
+execute as @e[type=armor_stand,name=greande,nbt={OnGround:1b}] at @s run effect give @a minecraft:resistance 1 10 true
+execute as @e[type=armor_stand,name=greande,nbt={OnGround:1b}] at @s run summon 
+execute as @e[type=armor_stand,name=greande,nbt={OnGround:1b}] at @s run kill @s
