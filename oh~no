@@ -27,4 +27,4 @@
       result = str(num1 / num2)
       print("答案是 " + result)
    else:
-      print("不知道你在輸入什麼")
+      print("你在公三小")
